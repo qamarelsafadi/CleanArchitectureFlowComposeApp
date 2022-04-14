@@ -7,10 +7,9 @@ import com.example.cleanarchflow.ui.home.model.Books
 import com.example.cleanarchflow.ui.home.model.Event
 import com.example.cleanarchflow.ui.home.model.Resource
 import com.example.domain.common.Status
-import com.example.domain.usecase.GetBooksUseCase
+import com.example.domain.features.books.usecase.GetBooksUseCase
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -26,7 +25,6 @@ class BooksViewModel (
 
     // Getting books with uncle bob as default author :)
     fun getBooks(author: String) {
-
         viewModelScope.launch {
             val booksResult = getBooksUseCase.invoke(author)
             booksResult.collectLatest {

@@ -1,4 +1,4 @@
-package com.example.domain.model.volume
+package com.example.domain.features.books.model.volume
 
 data class VolumeInfo(
     val title: String,

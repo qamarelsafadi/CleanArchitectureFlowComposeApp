@@ -1,6 +1,7 @@
-package com.example.data.api
+package com.example.data.remote.books.service
 
 
+import com.example.data.remote.books.model.BooksApiResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Query

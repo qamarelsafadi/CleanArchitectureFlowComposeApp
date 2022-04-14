@@ -1,8 +1,8 @@
-package com.example.data.mappers
+package com.example.data.remote.books.mapper
 
-import com.example.data.api.BooksApiResponse
-import com.example.domain.model.volume.Volume
-import com.example.domain.model.volume.VolumeInfo
+import com.example.data.remote.books.model.BooksApiResponse
+import com.example.domain.features.books.model.volume.Volume
+import com.example.domain.features.books.model.volume.VolumeInfo
 
 
 class BookApiResponseMapper {

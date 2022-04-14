@@ -1,6 +1,7 @@
-package com.example.data.api
+package com.example.data.remote.base
 
 
+import com.example.data.remote.books.service.BooksApi
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -10,7 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.converter.scalars.ScalarsConverterFactory
 
-class NetworkModule {
+class RetrofitClient {
 
     private val moshi by lazy {
         val moshiBuilder = Moshi.Builder()

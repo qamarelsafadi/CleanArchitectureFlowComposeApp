@@ -1,23 +1,23 @@
-package com.example.cleanarchflow.helper
+package com.example.cleanarchflow.ui.home
 import android.annotation.SuppressLint
 import android.content.Context
 import com.example.cleanarchflow.BuildConfig
-import com.example.data.api.NetworkModule
+import com.example.data.remote.base.RetrofitClient
 import com.example.data.db.AppDatabase
-import com.example.data.mappers.BookApiResponseMapper
-import com.example.data.mappers.BookEntityMapper
-import com.example.data.repository.BooksLocalDataSource
-import com.example.data.repository.BooksLocalDataSourceImpl
-import com.example.data.repository.BooksRemoteDataSourceImpl
-import com.example.data.repository.BooksRepositoryImpl
+import com.example.data.remote.books.mapper.BookApiResponseMapper
+import com.example.data.db.books.mappers.BookEntityMapper
+import com.example.data.repository.books.local.BooksLocalDataSource
+import com.example.data.repository.books.local.BooksLocalDataSourceImpl
+import com.example.data.repository.books.remote.BooksRemoteDataSourceImpl
+import com.example.data.repository.books.BooksRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 
-object ServiceLocator {
+object HomeSL {
 
     private var database: AppDatabase? = null
 
     private val networkModule by lazy {
-        NetworkModule()
+        RetrofitClient()
     }
     private val bookEntityMapper by lazy {
         BookEntityMapper()

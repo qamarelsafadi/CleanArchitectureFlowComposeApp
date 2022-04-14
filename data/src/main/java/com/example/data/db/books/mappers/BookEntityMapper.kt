@@ -1,8 +1,8 @@
-package com.example.data.mappers
+package com.example.data.db.books.mappers
 
-import com.example.data.entities.BookEntity
-import com.example.domain.model.volume.Volume
-import com.example.domain.model.volume.VolumeInfo
+import com.example.data.db.books.entities.BookEntity
+import com.example.domain.features.books.model.volume.Volume
+import com.example.domain.features.books.model.volume.VolumeInfo
 
 class BookEntityMapper {
 

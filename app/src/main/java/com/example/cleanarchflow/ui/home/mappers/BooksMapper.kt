@@ -1,7 +1,7 @@
 package com.example.cleanarchflow.ui.home.mappers
 
 import com.example.cleanarchflow.ui.home.model.Books
-import com.example.domain.model.volume.Volume
+import com.example.domain.features.books.model.volume.Volume
 
 
 class BooksMapper {

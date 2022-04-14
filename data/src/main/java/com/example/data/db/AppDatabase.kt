@@ -5,7 +5,8 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.example.data.entities.BookEntity
+import com.example.data.db.books.dao.BookDao
+import com.example.data.db.books.entities.BookEntity
 
 @Database(entities = [BookEntity::class], version = 1)
 @TypeConverters(Converters::class)

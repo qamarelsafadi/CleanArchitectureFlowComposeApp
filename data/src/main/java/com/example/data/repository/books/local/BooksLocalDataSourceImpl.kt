@@ -1,15 +1,14 @@
-package com.example.data.repository
+package com.example.data.repository.books.local
 
 
-import com.example.data.db.BookDao
-import com.example.data.mappers.BookEntityMapper
+import com.example.data.db.books.dao.BookDao
+import com.example.data.db.books.mappers.BookEntityMapper
 import com.example.domain.common.Resource
-import com.example.domain.model.volume.Volume
+import com.example.domain.features.books.model.volume.Volume
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 
 class BooksLocalDataSourceImpl(

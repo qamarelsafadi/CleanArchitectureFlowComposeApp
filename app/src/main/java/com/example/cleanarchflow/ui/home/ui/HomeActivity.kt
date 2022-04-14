@@ -1,4 +1,4 @@
-package com.example.cleanarchflow.ui.home
+package com.example.cleanarchflow.ui.home.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -42,8 +42,7 @@ class HomeActivity : ComponentActivity() {
         BooksViewModel.BooksViewModelFactory(
             application,
             (application as BaseApplication).getBooksUseCase,
-            (application as BaseApplication).booksMapper,
-        )
+            (application as BaseApplication).booksMapper)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

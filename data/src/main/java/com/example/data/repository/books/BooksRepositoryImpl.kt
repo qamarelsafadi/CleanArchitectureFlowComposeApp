@@ -1,10 +1,12 @@
-package com.example.data.repository
+package com.example.data.repository.books
 
 import android.content.Context
+import com.example.data.repository.books.local.BooksLocalDataSource
+import com.example.data.repository.books.remote.BooksRemoteDataSource
 import com.example.data.util.Common
 import com.example.domain.common.Resource
-import com.example.domain.model.volume.Volume
-import com.example.domain.repository.BooksRepository
+import com.example.domain.features.books.model.volume.Volume
+import com.example.domain.features.books.repository.BooksRepository
 import kotlinx.coroutines.flow.Flow
 
 class BooksRepositoryImpl(

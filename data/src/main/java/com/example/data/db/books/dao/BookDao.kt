@@ -1,9 +1,8 @@
-package com.example.data.db
+package com.example.data.db.books.dao
 
 
 import androidx.room.*
-import com.example.data.entities.BookEntity
-import kotlinx.coroutines.flow.Flow
+import com.example.data.db.books.entities.BookEntity
 
 @Dao
 interface BookDao {
