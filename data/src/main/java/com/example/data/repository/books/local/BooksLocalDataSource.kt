@@ -6,5 +6,5 @@ import kotlinx.coroutines.flow.Flow
 
 interface BooksLocalDataSource {
     suspend fun insert(volume: Volume)
-    suspend fun getBooks(author: String): Flow<Resource<List<Volume>>>
+    suspend fun getBooks(author: String): List<Volume>
 }

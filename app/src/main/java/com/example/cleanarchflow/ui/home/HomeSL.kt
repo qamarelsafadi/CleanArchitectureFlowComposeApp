@@ -35,9 +35,8 @@ object HomeSL {
 
     private fun createBooksRepository(context: Context): BooksRepositoryImpl {
         val database = database ?: createDataBase(context)
+        createBooksLocalDataSource(context = context)
         val newRepo = BooksRepositoryImpl(
-                context,
-                createBooksLocalDataSource(context),
                 BooksRemoteDataSourceImpl(
                     networkModule.createBooksApi(BuildConfig.GOOGLE_APIS_ENDPOINT),
                     BooksLocalDataSourceImpl(

@@ -21,25 +21,14 @@ class BooksLocalDataSourceImpl(
         bookDao.insert(bookEntityMapper.toBookEntity(volume))
     }
 
-    override suspend fun getBooks(author: String): Flow<Resource<List<Volume>>> = withContext(
-        Dispatchers.IO
+    override suspend fun getBooks(author: String): List<Volume> = withContext(
+        dispatcher
     ) {
-        var data: Flow<Resource<List<Volume>>> = MutableStateFlow(Resource.loading(null))
-        try {
-            val booksFlow = bookDao.getSavedBooks()
-            booksFlow.let {
-                data = if (it.isNullOrEmpty().not()) {
-                    MutableStateFlow(Resource.success(it.map { bookEntity ->
-                        bookEntityMapper.toVolume(bookEntity)
-                    }, "Data Found"))
-                } else {
-                    MutableStateFlow(Resource.error(null, "Data Not Found", null))
-                }
+        bookDao.getSavedBooks(author).let {
+            it.map { bookEntity ->
+                bookEntityMapper.toVolume(bookEntity)
             }
-        } catch (e: Exception) {
-            data = MutableStateFlow(Resource.error(null, e.message, null))
         }
-        data
     }
 
 }

@@ -10,6 +10,6 @@ interface BookDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insert(book: BookEntity)
 
-    @Query("SELECT * FROM BookEntity")
-    fun getSavedBooks(): List<BookEntity>
+    @Query("SELECT * FROM BookEntity WHERE authors LIKE  '%' || :author || '%' or authors LIKE :author ")
+    fun getSavedBooks(author: String): List<BookEntity>
 }

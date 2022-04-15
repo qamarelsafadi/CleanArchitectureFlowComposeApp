@@ -10,15 +10,11 @@ import com.example.domain.features.books.repository.BooksRepository
 import kotlinx.coroutines.flow.Flow
 
 class BooksRepositoryImpl(
-    private val context: Context,
-    private val localDataSource: BooksLocalDataSource,
     private val remoteDataSource: BooksRemoteDataSource
 ) : BooksRepository {
 
     override suspend fun getBooks(author: String): Flow<Resource<List<Volume>>> {
-        return if (Common.haveNetworkConnection(context))
-            remoteDataSource.getBooks(author)
-        else localDataSource.getBooks(author)
+        return  remoteDataSource.getBooks(author)
     }
 
 
